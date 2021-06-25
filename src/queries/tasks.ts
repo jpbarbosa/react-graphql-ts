@@ -8,3 +8,12 @@ export const GET_TASKS = gql`
     }
   }
 `;
+
+export const CREATE_TASK = gql`
+  mutation ($name: String!) {
+    createTask(name: $name) {
+      id
+      name
+    }
+  }
+`;

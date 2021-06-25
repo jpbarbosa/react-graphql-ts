@@ -17,3 +17,12 @@ export const CREATE_TASK = gql`
     }
   }
 `;
+
+export const UPDATE_TASK = gql`
+  mutation ($id: ID!, $name: String!) {
+    updateTask(id: $id, name: $name) {
+      id
+      name
+    }
+  }
+`;

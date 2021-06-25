@@ -2,6 +2,7 @@ import React from 'react';
 import { TaskForm } from './Form';
 import { Task } from '../../types/tasks';
 import { useActiveTask } from '../../contexts/ActiveTask';
+import { useTasks } from '../../hooks/useTasks';
 
 interface IProps {
   task: Task;
@@ -9,9 +10,10 @@ interface IProps {
 
 export const TaskItem: React.FC<IProps> = ({ task }) => {
   const { activeTask, setActiveTask } = useActiveTask();
+  const { updateTask } = useTasks();
 
   const handleUpdateTask = (task: Task) => {
-    //updateTask({ variables: task });
+    updateTask({ variables: task });
     setActiveTask();
   };
 

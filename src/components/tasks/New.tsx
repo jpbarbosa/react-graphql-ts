@@ -10,6 +10,7 @@ export const TaskNew: React.FC = () => {
 
   const handleCreateTask = (task: Task) => {
     createTask({ variables: task });
+    setActiveTask();
   };
 
   return (

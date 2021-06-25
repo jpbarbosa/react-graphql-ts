@@ -18,7 +18,6 @@ export const useForm = <T>(
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleAction(formState);
-    setFormState(initialState);
   };
 
   return { formState, handleChange, handleSubmit };

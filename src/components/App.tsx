@@ -1,14 +1,12 @@
 import React from 'react';
+import { Header } from './Header';
+import { TaskList } from './tasks/List';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <div className="App">
-      <header>
-        <div>React Basic CRUD</div>
-        <div>With GraphQL And TypeScript</div>
-      </header>
+      <Header />
+      <TaskList />
     </div>
   );
 };
-
-export default App;

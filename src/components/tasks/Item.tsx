@@ -10,7 +10,7 @@ interface IProps {
 
 export const TaskItem: React.FC<IProps> = ({ task }) => {
   const { activeTask, setActiveTask } = useActiveTask();
-  const { updateTask } = useTasks();
+  const { updateTask, removeTask } = useTasks();
 
   const handleUpdateTask = (task: Task) => {
     updateTask({ variables: task });
@@ -24,6 +24,12 @@ export const TaskItem: React.FC<IProps> = ({ task }) => {
       ) : (
         <div className="item">
           <span onClick={() => setActiveTask(task)}>{task.name}</span>
+          <button
+            className="bt-remove"
+            onClick={() => removeTask({ variables: { id: task.id } })}
+          >
+            X
+          </button>
         </div>
       )}
     </>

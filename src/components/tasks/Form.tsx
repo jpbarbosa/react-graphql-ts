@@ -3,15 +3,13 @@ import { useForm } from '../../hooks/useForm';
 import { Task } from '../../types/tasks';
 
 interface IProps {
+  activeTask: Task;
   handleAction: Function;
 }
 
-export const TaskForm: React.FC<IProps> = ({ handleAction }) => {
-  const initialState = {
-    name: '',
-  };
+export const TaskForm: React.FC<IProps> = ({ activeTask, handleAction }) => {
   const { handleChange, handleSubmit, formState } = useForm<Task>(
-    initialState,
+    activeTask,
     handleAction
   );
 

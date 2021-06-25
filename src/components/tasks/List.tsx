@@ -7,7 +7,7 @@ import { GET_TASKS } from '../../queries/tasks';
 export const TaskList: React.FC = () => {
   const { loading, data, error } = useQuery<TaskData>(GET_TASKS);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="loading">Loading...</div>;
   if (error) {
     return (
       <div className="error">
